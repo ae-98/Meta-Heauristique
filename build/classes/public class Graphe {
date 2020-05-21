@@ -1,0 +1,258 @@
+public class Graphe {
+
+
+   // ATTRIBUTS
+   private final int n;            // Nombre de sommets du graphe
+   private int[][] matrice;        // Matrice d'adjacence du graphe
+
+
+   // CONSTRUCTEURS
+
+   /**
+    * Construit un graphe vide à {@code n} sommets.
+    *
+    * @param n nombre de sommets du graphe
+    * @throws IllegalArgumentException si {@code n} est négatif ou nul
+    */
+   public Graphe(int n) {
+       if (n <= 0) {
+           throw new IllegalArgumentException("Erreur dans la construction du graphe. Le nombre de sommets doit être strictement positif.");
+       }
+
+       this.n = n;
+       this.matrice = new int[n][n];
+   }
+
+
+   /**
+    * Construit un graphe ayant comme matrice {@code matrice}.
+    *
+    * @param matrice d'adjacence du graphe
+    */
+   public Graphe(int[][] matrice) {
+       this.n = matrice.length;
+       this.matrice = matrice;
+   }
+
+   // METHODES
+
+   /**
+    * Renvoie le nombre de sommets du graphe.
+    *
+    * @return le nombre de sommets du graphe
+    */
+   public int getN() {
+       return this.n;
+   }
+
+
+   /**
+    * Renvoie la matrice d'adjacence du graphe.
+    *
+    * @return la matrice associée au graphe
+    */
+   public int[][] getMatrice() {
+       return this.matrice;
+   }
+
+
+   /**
+    * vérifie que le sommet {@code v} est un sommet valide du graphe
+    *
+    * @param v sommet du graphe à verifier
+    * @throws IllegalArgumentException si le sommet n'est pas valide
+    */
+   void verifieSommet(int v) {
+       if (v < 0 || v >= n)
+           throw new IllegalArgumentException(String.format("Le sommet %d n'est pas valide", v));
+   }
+
+
+   /**
+    * Ajoute l'arête dont les extrémités sont les sommets {@code i} et {@code j} au graphe
+    *
+    * @param i l'un des sommets de l'arête à ajouter au graphe
+    * @param j l'autre sommet de l'arête à ajouter au graphe
+    * @return true si l'arête a été ajoutée au graphe
+    * @throws IllegalArgumentException si {@code i} ou {@code j} ne sont pas des sommets valides
+    * @throws IllegalArgumentException si {@code i} = {@code j}
+    */
+   public boolean ajouteArete(int i, int j) {
+       // TODO
+       return false;
+   }
+
+
+   /**
+    * Supprime l'arête dont les extrémités sont les sommets {@code i} et {@code j} du graphe
+    *
+    * @param i l'une des extrémités de l'arête à supprimer au graphe
+    * @param j l'autre sommet de l'arête à supprimer au graphe
+    * @return true si l'arête a été supprimée du graphe
+    * @throws IllegalArgumentException si {@code i} et {@code j} ne sont pas des sommets valides
+    */
+   public boolean supprimeArete(int i, int j) {
+       // TODO
+       return false;
+   }
+
+
+   /**
+    * Renvoie vrai si les sommets {@code i} et {@code j} sont voisins
+    *
+    * @param i l'un des sommets à vérifier
+    * @param j l'autre sommet à vérifier
+    * @return vrai si les sommets {@code i} et {@code j} sont voisins
+    * @throws IllegalArgumentException si {@code i} et {@code j} ne sont pas des sommets valides
+    */
+   public boolean sontVoisins(int i, int j) {
+       // TODO
+       return false;
+   }
+
+
+   /**
+    * Calcule le nombre de voisins du sommet {@code v}
+    *
+    * @param v sommet à évaluer
+    * @return le degré de {@code v}
+    * @throws IllegalArgumentException si {@code v} n'est pas un sommet valide
+    */
+   public int degre(int v) {
+       // TODO
+       return Integer.MIN_VALUE;
+   }
+
+
+   /**
+    * Calcule le degré maximum du graphe
+    *
+    * @return le degré maximum du graphe
+    */
+   public int maxDegre() {
+       // TODO
+       return Integer.MIN_VALUE;
+   }
+
+
+   /**
+    * Renvoie le nombre d'arêtes du graphe
+    *
+    * @return le nombre d'arêtes du graphe
+    */
+   public int nbAretes() {
+       // TODO
+       return Integer.MIN_VALUE;
+   }
+
+
+   /**
+    * Vérifie que la matrice est une matrice d'adjacence valide.
+    *
+    * @param mat la matrice à vérifier
+    * @return vrai si la matrice mat peut être la matrice d'adjacence d'un graphe, faux sinon.
+    */
+   public static boolean estMatriceAdjacence(int[][] mat) {
+       // TODO
+       return false;
+   }
+
+
+   /**
+    * Renvoie vrai si {@code v} est un sommet isolé du graphe
+    *
+    * @param v sommet à évaluer
+    * @return vrai si {@code v} est un sommet isolé du graphe
+    * @throws IllegalArgumentException si {@code v} n'est pas un sommet valide
+    */
+   public boolean estIsole(int v) {
+       // TODO
+       return false;
+   }
+
+
+   /**
+    * Renvoie le complémentaire du graphe courant
+    *
+    * @return le complémentaire du graphe courant
+    */
+   public Graphe complementaire() {
+       // TODO
+       return null;
+   }
+
+
+   /**
+    * Renvoie un graphe complet possédant {@code n} sommets.
+    *
+    * @param n nombre de sommets du graphe complet
+    * @return un graphe complet possédant {@code n} sommets
+    * @throws IllegalArgumentException si {@code n} n'est pas valide
+    */
+   public static Graphe grapheComplet(int n) {
+       // TODO
+       return null;
+   }
+
+
+   /**
+    * Renvoie la matrice d'incidence du graphe
+    *
+    * @return la matrice d'incidence du graphe
+    */
+   public int[][] matriceIncidence() {
+       // TODO
+       return null;
+   }
+
+   /**
+    * Affiche le graphe.
+    */
+   public void affiche() {
+
+       System.out.print("  | ");
+       for (int i1 = 0; i1 < matrice.length; i1++) {
+           System.out.print(i1 + " ");
+       }
+
+       System.out.println();
+
+       for (int i2 = 0; i2 < matrice.length; i2++) {
+           System.out.print("---");
+       }
+
+       System.out.println();
+
+       for (int i3 = 0; i3 < matrice.length; i3++) {
+           System.out.print(i3 + " | ");
+           for (int j = 0; j < matrice[0].length; j++) {
+               System.out.print(matrice[i3][j] + " ");
+           }
+           System.out.println();
+       }
+
+       for (int i4 = 0; i4 < matrice.length; i4++) {
+           System.out.print("---");
+       }
+       System.out.println();
+   }
+
+   public static void main(String[] args) {
+       // Vous pouvez tester vos fonctions ici.
+       // Si besoin, rajoutez des tests.
+       try {
+           int n = 5;
+
+           Graphe g = new Graphe(n);
+           g.ajouteArete(1, 4);
+           g.ajouteArete(3, 4);
+           System.out.println("La matrice d'adjacence du graphe est :");
+           g.affiche();
+
+
+       } catch (Exception e) {
+           System.out.println(e.getMessage());
+       }
+
+   }
+
